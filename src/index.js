@@ -1,4 +1,5 @@
-import './styles.css';
+import './css/styles.css';
+import './js/workDom';
 import debounce from 'lodash.debounce';
 
-console.log('debounce', debounce);
+import './js/fetchCountries';
