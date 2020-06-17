@@ -18,7 +18,6 @@ function handleInput(e) {
   refs.item.innerHTML = '';
 
   const value = e.target.value;
-  console.log('value', value);
   fetchCountries(value);
 }
 
