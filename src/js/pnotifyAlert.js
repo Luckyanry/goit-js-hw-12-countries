@@ -3,11 +3,12 @@ import '@pnotify/core/dist/BrightTheme.css';
 
 const stackBottomModal = new Stack({
   dir1: 'down',
-  modal: true,
+  modal: false,
   firstpos1: 0,
   spacing1: 0,
-  overlayClose: true,
-  context: document.querySelector('.js_country'),
+  overlayClose: false,
+  context: document.querySelector('.container'),
+  // context: document.querySelector('.js_country'), // work but give error Cannot read property 'removeChild' of null
 });
 
 export default function notice() {
