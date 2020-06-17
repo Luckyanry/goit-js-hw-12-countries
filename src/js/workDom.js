@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import fetchCountries from './fetchCountries';
+import murkup from './murkup';
 
 export const refs = {
   input: document.querySelector('#country'),
@@ -12,7 +12,7 @@ function handleInput(e) {
   refs.item.innerHTML = '';
 
   const input = e.target.value;
-  fetchCountries(input);
+  murkup(input);
 }
 
 refs.input.addEventListener('input', debounce(handleInput, 500));
