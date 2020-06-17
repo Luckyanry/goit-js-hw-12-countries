@@ -9,14 +9,10 @@ export const refs = {
 function handleInput(e) {
   e.preventDefault();
 
-  // console.log('event', e);
-  // console.log('e.target', e.target.value);
-  // console.log('e.currentTarget', e.currentTarget);
-
   refs.item.innerHTML = '';
 
-  const value = e.target.value;
-  fetchCountries(value);
+  const input = e.target.value;
+  fetchCountries(input);
 }
 
 refs.input.addEventListener('input', debounce(handleInput, 500));

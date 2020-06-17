@@ -3,11 +3,11 @@ import '@pnotify/core/dist/BrightTheme.css';
 
 const stackBottomModal = new Stack({
   dir1: 'down',
-  modal: false,
+  modal: true,
   firstpos1: 0,
   spacing1: 0,
-  overlayClose: false,
-  context: document.querySelector('.container'),
+  overlayClose: true,
+  context: document.querySelector('.js_country'),
 });
 
 export default function notice() {
