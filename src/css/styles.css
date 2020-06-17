@@ -20,13 +20,12 @@ h6 {
   margin: 0;
 }
 
-span {
-  font-weight: bold;
+ul {
+  list-style: none;
 }
 
-.container {
-  width: 600px;
-  margin: 0 auto;
+span {
+  font-weight: bold;
 }
 
 body {
@@ -35,6 +34,11 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
   background-image: url('../images/bg-pattern.png');
+}
+
+.container {
+  width: 650px;
+  margin: 0 auto;
 }
 
 .title {
@@ -48,15 +52,41 @@ body {
   justify-content: space-between;
 }
 
+.input {
+  text-align: center;
+  margin: 30px auto;
+}
+
 #country {
-  width: 600px;
+  width: 650px;
   height: 40px;
   border: 2px solid #adabab;
   border-radius: 5px;
   padding: 0 10px;
 }
 
-.input {
-  text-align: center;
-  margin: 30px auto;
+.item_desc {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.language_list {
+  list-style: disc;
+  padding-left: 30px;
+}
+
+.language_list_item {
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+.country_flag {
+  text-align: start;
+  border: 2px solid #adabab;
+}
+
+.countries_list {
+  list-style: disc;
+  font-size: 25px;
+  margin: 0 0 20px 35px;
 }

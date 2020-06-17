@@ -6,18 +6,15 @@ const stackBottomModal = new Stack({
   modal: false,
   firstpos1: 0,
   spacing1: 0,
-  overlayClose: true,
+  overlayClose: false,
   context: document.querySelector('.container'),
 });
 
-function notice() {
+export default function notice() {
   alert({
     title: 'Too many matches found. Please enter a more specific query!',
     width: 'auto',
-    height: '25',
     type: 'error',
     stack: stackBottomModal,
   });
 }
-
-// console.log('notice', notice());

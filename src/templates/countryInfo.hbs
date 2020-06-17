@@ -2,19 +2,17 @@
   <h1 class="title">{{name}}</h1>
   <div class="wrapper">
     <div class="country_info">
-      <p><span>Capital:</span>{{capital}}</p>
-      <p><span>Population:</span>{{population}}</p>
-      <span>Languages:</span>
-      <ul>
-        {{#each this}}
-        <li>{{languages.name}}</li>
+      <p class="item_desc"><span>Capital:</span> {{capital}}</p>
+      <p class="item_desc"><span>Population:</span> {{population}}</p>
+      <p class="item_desc"><span>Languages:</span></p>
+      <ul class="language_list">
+        {{#each languages}}
+        <li class="language_list_item">{{this.name}}</li>
         {{/each}}
       </ul>
     </div>
-    <img src="{{flag}}" alt="{{nativeName}}" width="300" height="300">
+    <div>
+      <img class="country_flag" src="{{flag}}" alt="{{nativeName}}" width="350">
+    </div>
   </div>
 </li>
-
-{{!-- <div class="country_flag">
-  <img src="{{flag}}" alt="{{nativeName}}" width="500" height="500">
-</div> --}}

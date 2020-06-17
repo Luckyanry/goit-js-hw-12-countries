@@ -1,27 +1,25 @@
-// Есть файл fetchCountries.js с дефолтным экспортом функции fetchCountries(searchQuery),
-// возвращающей промис с массивом стран, результат запроса к API.
-import debounce from 'lodash.debounce';
+import countryInfo from '../templates/countryInfo.hbs';
+import countriesList from '../templates/countriesList.hbs';
+import notice from './pnotifyAlert';
+import { refs } from './workDom';
 
-function fetchCountries(searchQuery) {
+export default function fetchCountries(searchQuery) {
   return fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
     .then(res => {
-      return res.json;
+      return res.json();
     })
-    .then(data => console.log(data))
+    .then(data => {
+      if (data.length === 1) {
+        return refs.item.insertAdjacentHTML('beforeend', countryInfo(...data));
+      }
+
+      if (data.length > 1 && data.length <= 10) {
+        return refs.item.insertAdjacentHTML('beforeend', countriesList(data));
+      }
+
+      if (data.length > 10) {
+        return notice();
+      }
+    })
     .catch(err => console.warn(err));
 }
-
-// console.log(fetchCountries());
-
-const refs = {
-  input: document.querySelector('#country'),
-  item: document.querySelector('.js_country'),
-};
-
-function handleInput(e) {
-  const value = e.target.value;
-  console.log('value', value);
-  fetchCountries(value);
-}
-
-refs.input.addEventListener('input', debounce(handleInput, 500));
