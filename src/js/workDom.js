@@ -1,5 +1,3 @@
-// Есть файл fetchCountries.js с дефолтным экспортом функции fetchCountries(searchQuery),
-// возвращающей промис с массивом стран, результат запроса к API.
 import debounce from 'lodash.debounce';
 import fetchCountries from './fetchCountries';
 
